@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #0b0b0f;
+  --bg-card: #111116;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --accent-red: #e31b23;
+  --accent-bright: #ff3b30;
+  --accent-deep: #9f0d16;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(227, 27, 35, 0.4);
+  --glow-red: rgba(227, 27, 35, 0.3);
+  --glow-red-lg: rgba(227, 27, 35, 0.15);
+}
+
+@theme {
+  --color-primary-bg: #050505;
+  --color-secondary-bg: #0b0b0f;
+  --color-card-bg: #111116;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-accent-red: #e31b23;
+  --color-accent-bright: #ff3b30;
+  --color-accent-deep: #9f0d16;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050505;
+  color: #ffffff;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  selection-background-color: #e31b23;
+  selection-color: #ffffff;
+}
+
+::selection {
+  background: #e31b23;
+  color: #ffffff;
+}
+
+/* Custom Outlined Text for Hero "I LEAD." */
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+.stroke-text:hover {
+  -webkit-text-stroke: 1.5px #ff3b30;
+  text-shadow: 0 0 20px rgba(227, 27, 35, 0.4);
+}
+
+/* Cyber Technical Grid Pattern */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f1f26;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e31b23;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(17, 17, 22, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(227, 27, 35, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(227, 27, 35, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Red Glow Utilities */
+.glow-accent {
+  box-shadow: 0 0 25px rgba(227, 27, 35, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(227, 27, 35, 0.4);
+}
+
+/* Animation utilities for top layer modals & dialogs */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
